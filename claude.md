@@ -35,6 +35,43 @@ This project implements the most important deep learning algorithms for generati
 - Photorealistic image generation
 - Strong performance on compositional prompts
 
+### GAN Models
+
+#### 1. StyleGAN3
+- Alias-free generator architecture
+- Continuous signal processing for translation/rotation equivariance
+- Style-based generator with mapping network
+- Adaptive discriminator augmentation (ADA)
+- Superior image quality at 1024x1024 resolution
+
+#### 2. BigGAN
+- Large-scale GAN for high-fidelity image synthesis
+- Class-conditional batch normalization
+- Self-attention mechanisms in G and D
+- Orthogonal regularization and spectral normalization
+- Trained on ImageNet at 512x512 resolution
+
+#### 3. CycleGAN
+- Unpaired image-to-image translation
+- Cycle consistency loss for bidirectional mapping
+- No paired training data required
+- Applications: style transfer, domain adaptation
+- Lightweight generator architecture
+
+#### 4. Progressive GAN
+- Progressive growing of networks during training
+- Starts from 4x4, grows to 1024x1024
+- Smooth fade-in of new layers
+- Training stabilization techniques
+- High-quality face generation
+
+#### 5. VQGAN
+- Vector Quantized GAN with discrete latent codes
+- Combines VQ-VAE with adversarial training
+- Perceptual and adversarial losses
+- Foundation for many modern generative models
+- Efficient high-resolution synthesis
+
 ### Video Generation Models
 
 #### 1. OpenAI Sora
@@ -116,10 +153,31 @@ cv-generative/
 │   │   │   ├── dalle3.py
 │   │   │   ├── consistency.py
 │   │   │   └── README.md
-│   │   └── imagen/
-│   │       ├── imagen.py
-│   │       ├── cascaded_diffusion.py
-│   │       └── README.md
+│   │   ├── imagen/
+│   │   │   ├── imagen.py
+│   │   │   ├── cascaded_diffusion.py
+│   │   │   └── README.md
+│   │   └── gan/
+│   │       ├── stylegan3/
+│   │       │   ├── stylegan3.py
+│   │       │   ├── generator.py
+│   │       │   ├── discriminator.py
+│   │       │   └── README.md
+│   │       ├── biggan/
+│   │       │   ├── biggan.py
+│   │       │   ├── self_attention.py
+│   │       │   └── README.md
+│   │       ├── cyclegan/
+│   │       │   ├── cyclegan.py
+│   │       │   ├── generators.py
+│   │       │   └── README.md
+│   │       ├── progressive_gan/
+│   │       │   ├── progressive_gan.py
+│   │       │   └── README.md
+│   │       └── vqgan/
+│   │           ├── vqgan.py
+│   │           ├── codebook.py
+│   │           └── README.md
 │   ├── video_generation/
 │   │   ├── sora/
 │   │   │   ├── sora.py
